@@ -2,6 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { UCUICMPEvent, UCUICMPEventType } from '../types';
+import { ConsentService } from './consent.service';
 
 declare global {
   interface Window {
@@ -18,17 +19,17 @@ declare global {
 })
 export class AppComponent {
   title = 'angular-usercentrics';
-  consentGiven = false;
+
+  constructor(public consentService: ConsentService) { }
 
   @HostListener('window:UC_UI_CMP_EVENT', ['$event'])
   onUsercentricsEvent(event: UCUICMPEvent) {
-    console.log('Usercentrics event:', event.detail.type);
     switch (event.detail.type) {
       case UCUICMPEventType.ACCEPT_ALL:
-        this.consentGiven = true;
+        this.consentService.consentGiven = true;
         break;
       case UCUICMPEventType.DENY_ALL:
-        this.consentGiven = false;
+        this.consentService.consentGiven = false;
         break;
     }
   }

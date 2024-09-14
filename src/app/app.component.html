@@ -2,9 +2,9 @@
   <div class="content">
     <div class="left-side">
       <h1>{{ title }}</h1>
-      <p>Consent status: {{ consentGiven ? 'Given' : 'Not given' }}</p>
+      <p>Consent status: {{ consentService.consentGiven ? 'Given' : 'Not given' }}</p>
       <button (click)="openCMP()">Open Consent Management Platform</button>
-      <div *ngIf="consentGiven">
+      <div *ngIf="consentService.consentGiven">
         <h2>Your content here</h2>
         <p>This content is only visible when consent is given.</p>
       </div>
