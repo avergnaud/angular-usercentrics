@@ -1,3 +1,6 @@
+Notes :
+ * attention aux extensions navigateur du type "I still don't care about cookies". La requête vers [https://app.usercentrics.eu/browser-ui/latest/loader.js](https://app.usercentrics.eu/browser-ui/latest/loader.js) est bloquée.
+
 # AngularUsercentrics
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.
