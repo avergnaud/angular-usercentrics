@@ -1,7 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { UCUICMPEvent, UCUICMPEventType } from '../types';
+import { UCUICMPEvent, UCUICMPEventType } from './types';
 import { ConsentService } from './consent.service';
 
 declare global {
@@ -24,6 +24,7 @@ export class AppComponent {
 
   @HostListener('window:UC_UI_CMP_EVENT', ['$event'])
   onUsercentricsEvent(event: UCUICMPEvent) {
+    console.log(event.detail.type)
     switch (event.detail.type) {
       case UCUICMPEventType.ACCEPT_ALL:
         this.consentService.consentGiven = true;
