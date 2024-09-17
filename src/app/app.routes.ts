@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { YoutubeVideoComponent } from './youtube-video/youtube-video.component';
+import { VideosComponent } from './videos/videos.component';
 
 export const routes: Routes = [
     { 
-        path: 'youtube-video', 
-        title: 'some youtube video',
-        component: YoutubeVideoComponent }
+        path: 'videos', 
+        title: 'some vidoes',
+        component: VideosComponent }
 ];
