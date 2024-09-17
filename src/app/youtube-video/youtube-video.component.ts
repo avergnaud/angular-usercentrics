@@ -10,11 +10,13 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class YoutubeVideoComponent {
 
-  @Input() videoId: string;
+  @Input({ required: true }) videoId: string;
 
   trustedHtml: any;
 
-  constructor(private sanitizer: DomSanitizer) {
+  constructor(private sanitizer: DomSanitizer) {  }
+
+  ngOnInit() {
     const unsafeHtml = `<iframe 
   width="560" 
   height="315" 

@@ -9,5 +9,5 @@ import { YoutubeVideoComponent } from '../youtube-video/youtube-video.component'
   styleUrl: './videos.component.css'
 })
 export class VideosComponent {
-
+  rickroll:string = "dQw4w9WgXcQ";
 }
