@@ -8,14 +8,19 @@ import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
   templateUrl: './youtube-video.component.html',
   styleUrl: './youtube-video.component.css'
 })
-export class YoutubeVideoComponent implements OnInit {
+export class YoutubeVideoComponent {
  
   videoUrlString:string = "https://www.youtube.com/embed/dQw4w9WgXcQ";
   videoUrl:SafeResourceUrl;
 
-  constructor(private sanitizer:DomSanitizer) { }
-
-  ngOnInit() {
+  constructor(private sanitizer:DomSanitizer) {
     this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoUrlString);
-  }
+   }
+
+  // ngOnInit()
+  // ngDoCheck()
+  // ngAfterContentInit()
+  // ngAfterContentChecked()
+  // ngAfterViewInit()
+  // ngAfterViewChecked()
 }
