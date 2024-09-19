@@ -21,6 +21,15 @@ export class YoutubeVideoComponent {
   // ngDoCheck()
   // ngAfterContentInit()
   // ngAfterContentChecked()
-  // ngAfterViewInit()
-  // ngAfterViewChecked()
+  ngAfterViewInit() {
+    console.log('UC_UI.restartEmbeddings()');
+    window.UC_UI.restartEmbeddings();
+  }
+  /*
+  ngAfterViewChecked() {
+    console.log('UC_UI.restartEmbeddings()');
+    window.UC_UI.restartEmbeddings();
+  }
+  infinite loop
+  */
 }
