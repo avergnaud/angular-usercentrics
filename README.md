@@ -10,6 +10,8 @@ Pistes KO :
 Seule solution trouvée :
  * unsafeHtml  dans [youtube-video.component.ts](https://github.com/avergnaud/angular-usercentrics/blob/feature/video-id-dynamique/src/app/youtube-video/youtube-video.component.ts) et `<div [innerHTML]="trustedHtml"></div>`
 
+![demo](./docs/dynamic_demo.gif?raw=true)
+
 # AngularUsercentrics
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.
