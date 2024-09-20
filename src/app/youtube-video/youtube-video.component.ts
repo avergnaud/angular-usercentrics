@@ -17,19 +17,36 @@ export class YoutubeVideoComponent {
     this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoUrlString);
    }
 
-  // ngOnInit()
-  // ngDoCheck()
-  // ngAfterContentInit()
-  // ngAfterContentChecked()
-  ngAfterViewInit() {
+  ngOnInit() {
+    window.UC_UI.restartEmbeddings();
+    window.UC_UI.enableScriptsForServicesWithConsent();
+  }
+  /*
+  ngDoCheck() {
     console.log('UC_UI.restartEmbeddings()');
     window.UC_UI.restartEmbeddings();
   }
+    */
+  ngAfterContentInit() {
+    window.UC_UI.restartEmbeddings();
+    window.UC_UI.enableScriptsForServicesWithConsent();
+  }
   /*
+  ngAfterContentChecked() {
+    console.log('UC_UI.restartEmbeddings()');
+    window.UC_UI.restartEmbeddings();
+  }
+  même pas de contenu
+  */
+ /*
+  ngAfterViewInit() {
+    console.log('UC_UI.restartEmbeddings()');
+    window.UC_UI.enableScriptsForServicesWithConsent();
+  }
   ngAfterViewChecked() {
     console.log('UC_UI.restartEmbeddings()');
     window.UC_UI.restartEmbeddings();
+    window.UC_UI.enableScriptsForServicesWithConsent();
   }
-  infinite loop
-  */
+    */
 }
