@@ -1,6 +1,14 @@
 Notes :
  * attention aux extensions navigateur du type "I still don't care about cookies". La requête vers [https://app.usercentrics.eu/browser-ui/latest/loader.js](https://app.usercentrics.eu/browser-ui/latest/loader.js) est bloquée.
 
+Pistes KO :
+ * angular standard avec `[attr.uc-src]="videoUrl"` [branche](https://github.com/avergnaud/angular-usercentrics/tree/ko-1)
+ * angular standard avec `[src]="videoUrl"` [branche](https://github.com/avergnaud/angular-usercentrics/tree/ko-2)
+ * [https://termageddon.freshdesk.com/support/solutions/articles/66000515704-improving-page-load-speed-when-using-the-usercentrics-cookie-consent-tool](https://termageddon.freshdesk.com/support/solutions/articles/66000515704-improving-page-load-speed-when-using-the-usercentrics-cookie-consent-tool) [branche](https://github.com/avergnaud/angular-usercentrics/tree/ko-3)
+ * Appel à l'API usercentrics `window.UC_UI.restartEmbeddings()` et/ou `window.UC_UI.enableScriptsForServicesWithConsent()` dans les hooks ngOnInit, ngDoCheck, ngAfterContentInit, ngAfterContentChecked, ngAfterViewInit, ngAfterViewChecked.
+
+Seule solution trouvée :
+ * unsafeHtml  dans [youtube-video.component.ts](https://github.com/avergnaud/angular-usercentrics/blob/feature/video-id-dynamique/src/app/youtube-video/youtube-video.component.ts) et `<div [innerHTML]="trustedHtml"></div>`
 
 # AngularUsercentrics
 
