@@ -1,20 +1,18 @@
-import { Component, Input } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-youtube-video',
   standalone: true,
   imports: [],
-  templateUrl: './youtube-video.component.html',
-  styleUrl: './youtube-video.component.css'
+  template: `<div [innerHTML]="trustedHtml"></div>`
 })
-export class YoutubeVideoComponent {
+export class YoutubeVideoComponent implements OnInit{
 
   @Input({ required: true }) videoId: string;
+  private readonly sanitizer= Inject(DomSanitizer);
+  trustedHtml: string;
 
-  trustedHtml: any;
-
-  constructor(private sanitizer: DomSanitizer) {  }
 
   ngOnInit() {
     const unsafeHtml = `<iframe 
