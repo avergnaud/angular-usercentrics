@@ -17,20 +17,21 @@ export class YoutubeVideoComponent {
     this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoUrlString);
    }
 
+    /*
   ngOnInit() {
     window.UC_UI.restartEmbeddings();
     window.UC_UI.enableScriptsForServicesWithConsent();
   }
-  /*
   ngDoCheck() {
     console.log('UC_UI.restartEmbeddings()');
     window.UC_UI.restartEmbeddings();
   }
-    */
+    
   ngAfterContentInit() {
     window.UC_UI.restartEmbeddings();
     window.UC_UI.enableScriptsForServicesWithConsent();
   }
+    */
   /*
   ngAfterContentChecked() {
     console.log('UC_UI.restartEmbeddings()');
